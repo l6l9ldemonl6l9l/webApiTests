@@ -24,6 +24,7 @@ public class ApiTests {
         uploadRequest.headers("Dropbox-API-Arg",uploadObj.toJSONString(),
                 "Content-Type","text/plain; charset=dropbox-cors-hack",
                 "Authorization", "Bearer " + Creds.token);
+        String check = uploadObj.toJSONString();
 
         uploadRequest.body(FileUtils.readFileToByteArray(file));
         Response uploadResponse = uploadRequest.post();
